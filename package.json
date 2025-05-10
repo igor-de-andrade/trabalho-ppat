@@ -1,0 +1,15 @@
+{
+  "name": "ppat_trabalho_final",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./tests"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "devDependencies": {
+    "mocha": "^11.2.2"
+  }
+}
