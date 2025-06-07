@@ -1,0 +1,31 @@
+# Nome do pipeline
+name: "Execução manual - Testes unitários - Avaliação"
+
+# Regras para disparar o pipeline
+# Gatilho de execução manual = workflow_dispatch
+on:
+  workflow_dispatch:
+
+# Trabalhos / Tarefas dentro do pipeline = jobs
+jobs:
+  unit-tests:
+    # Máquina que o job vai executar
+    runs-on: ubuntu-latest
+
+    # Passos do script de build
+    steps:
+      # Clonar o projeto
+      - uses: actions/checkout@v4
+
+      # Instalar o node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      # Instalar as dependências
+      - name: Instalando as dependências
+        run: npm i
+
+      # Executar os testes unitários
+      - name: Executando os testes unitários
+        run: npm run test
